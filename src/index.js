@@ -8,23 +8,23 @@ const app = express();
 
 app.listen(process.env.PORT || 3333);
 
-/*app.post('/summoner/:summoner', async(req, res)=>{
+app.post('/summoner/:summoner', async(req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
 
     //Pegar as informações básicas tipo os ids para pegarem mais informações
     const { summoner } = req.params;
     let user = await axios({
         method : 'get',
-        baseURL: `${process.env.LOL_URL}/lol/summoner/v4/summoners/by-name/${summoner}`,
-        headers: {'X-Riot-Token': process.env.LOL_KEY}
+        baseURL: `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}`,
+        headers: {'X-Riot-Token': 'RGAPI-ce951105-6d1d-42c4-9d9a-86c3846469fa'}
     }).then((res)=>{
         return res.data;
     })
     //Pegar as informações mais elaboradas tipo quantidade de vitórias ranked
     let summonerInfo = await axios({
         method : 'get',
-        baseURL: `${process.env.LOL_URL}/lol/league/v4/entries/by-summoner/${user.id}`,
-        headers: {'X-Riot-Token': process.env.LOL_KEY}
+        baseURL: `https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/${user.id}`,
+        headers: {'X-Riot-Token': 'RGAPI-ce951105-6d1d-42c4-9d9a-86c3846469fa'}
     }).then((res)=>{
         return res.data;
     })
@@ -63,7 +63,4 @@ app.listen(process.env.PORT || 3333);
         });
     }
     
-})*/
-app.get("/",(req, res)=>{
-    res.send("oi");
 })
