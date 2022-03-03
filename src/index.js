@@ -64,6 +64,6 @@ app.listen(process.env.PORT || 3333);
     }
     
 })*/
-app.get((req, res)=>{
+app.get("/",(req, res)=>{
     res.send("oi");
 })
