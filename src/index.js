@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const { json } = require("express");
-const res = require("express/lib/response");
+//const res = require("express/lib/response");
 //require("dotenv").config();//informações para o header, url para facilitar o processo de pegar informações.
 const app = express();
 
