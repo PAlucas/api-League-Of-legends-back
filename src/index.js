@@ -1,13 +1,14 @@
 const express = require("express");
 const axios = require("axios");
 const { json } = require("express");
+const res = require("express/lib/response");
 require("dotenv").config();//informações para o header, url para facilitar o processo de pegar informações.
 const app = express();
 
 
 app.listen(process.env.PORT || 3333);
 
-app.post('/summoner/:summoner', async(req, res)=>{
+/*app.post('/summoner/:summoner', async(req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
 
     //Pegar as informações básicas tipo os ids para pegarem mais informações
@@ -62,4 +63,7 @@ app.post('/summoner/:summoner', async(req, res)=>{
         });
     }
     
+})*/
+app.get((req, res)=>{
+    res.send("oi");
 })
