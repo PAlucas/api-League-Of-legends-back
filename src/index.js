@@ -5,7 +5,7 @@ require("dotenv").config();//informações para o header, url para facilitar o pro
 const app = express();
 
 
-app.listen(3333);
+app.listen("https://react-lol-api.herokuapp.com/");
 
 app.post('/summoner/:summoner', async(req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
