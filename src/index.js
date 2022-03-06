@@ -3,7 +3,7 @@ const axios = require("axios");
 const { json } = require("express");
 //require("dotenv").config();//informações para o header, url para facilitar o processo de pegar informações.
 const app = express();
-let token = 'RGAPI-6a602846-8b96-414a-925f-cf3b795d4a27';
+
 
 app.listen(process.env.PORT || 3333);
 
@@ -15,7 +15,7 @@ app.post('/summoner/:summoner', async(req, res)=>{
     let user = await axios({
         method : 'get',
         baseURL: `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}`,
-        headers: {'X-Riot-Token': token}
+        headers: {'X-Riot-Token': 'RGAPI-d5287935-e6b1-40de-b20b-6630d4936a9e'}
     }).then((res)=>{
         return res.data;
     })
@@ -23,7 +23,7 @@ app.post('/summoner/:summoner', async(req, res)=>{
     let summonerInfo = await axios({
         method : 'get',
         baseURL: `https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/${user.id}`,
-        headers: {'X-Riot-Token': token}
+        headers: {'X-Riot-Token': 'RGAPI-d5287935-e6b1-40de-b20b-6630d4936a9e'}
     }).then((res)=>{
         return res.data;
     })
