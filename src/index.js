@@ -16,7 +16,7 @@ app.post('/summoner/:summoner', async(req, res)=>{
     let user = await axios({
         method : 'get',
         baseURL: `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}`,
-        headers: {'X-Riot-Token': 'RGAPI-d5287935-e6b1-40de-b20b-6630d4936a9e'}
+        headers: {'X-Riot-Token': 'RGAPI-5b5750d2-ccf8-481a-9e7c-0afff0bb2a74'}
     }).then((res)=>{
         return res.data;
     })
@@ -24,7 +24,7 @@ app.post('/summoner/:summoner', async(req, res)=>{
     let summonerInfo = await axios({
         method : 'get',
         baseURL: `https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/${user.id}`,
-        headers: {'X-Riot-Token': 'RGAPI-d5287935-e6b1-40de-b20b-6630d4936a9e'}
+        headers: {'X-Riot-Token': 'RGAPI-5b5750d2-ccf8-481a-9e7c-0afff0bb2a74'}
     }).then((res)=>{
         return res.data;
     })
