@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const { json } = require("express");
 var cors = require('cors')
-//require("dotenv").config();//informações para o header, url para facilitar o processo de pegar informações.
+require("dotenv").config();//informações para o header, url para facilitar o processo de pegar informações.
 const app = express();
 
 app.use(cors())
